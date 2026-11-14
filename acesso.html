@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Acesso do gestor</title>
+<link rel="stylesheet" href="assets/painel.css">
+<script src="assets/acesso.js" defer></script>
+</head>
+<body>
+<main class="app acesso">
+  <header class="top">
+    <div>
+      <p class="eyebrow">Acesso do gestor</p>
+      <h1>Painel de Resultados</h1>
+    </div>
+  </header>
+
+  <details class="list" id="primeira">
+    <summary><b>Primeira vez?</b> Crie o segredo dos links</summary>
+    <div class="passo">
+      <p class="hint">O segredo é criado aqui no seu navegador e não é enviado para lugar nenhum. Guarde num gerenciador de senhas e cadastre no GitHub com o nome <b>PAINEL_SEGREDO</b>.</p>
+      <div><button class="btn dark" id="gerar" type="button">Gerar segredo</button></div>
+      <output id="novo" hidden></output>
+      <div id="acoes-novo" hidden style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button class="btn" id="copiar-novo" type="button">Copiar segredo</button>
+        <span id="aviso-novo" class="hint" aria-live="polite"></span>
+      </div>
+      <p class="hint">Quem tiver esse segredo consegue abrir todos os links. Se um dia ele for trocado, todos os links mudam.</p>
+    </div>
+  </details>
+
+  <p class="hint" style="margin-top:18px">Cole o segredo PAINEL_SEGREDO que está cadastrado no GitHub. O link é calculado aqui no seu navegador; o segredo não é enviado para lugar nenhum.</p>
+  <form id="form" autocomplete="off">
+    <label for="segredo">Segredo dos links
+      <input id="segredo" type="password" required minlength="24" spellcheck="false">
+    </label>
+    <label for="versao">Versão do link do gestor
+      <input id="versao" type="number" min="1" value="1">
+    </label>
+    <div><button class="btn dark" type="submit">Gerar meu link</button></div>
+    <output id="saida" hidden></output>
+    <div id="acoes" hidden style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <a class="btn" id="abrir" href="#">Abrir painel do gestor</a>
+      <button class="btn" id="copiar" type="button">Copiar link</button>
+      <span id="aviso" class="hint" aria-live="polite"></span>
+    </div>
+  </form>
+  <p class="hint" style="margin-top:14px">Salve o link nos favoritos. Ele abre a visão completa de todos os clientes, então não compartilhe.</p>
+</main>
+</body>
+</html>
